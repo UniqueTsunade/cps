@@ -1,0 +1,62 @@
+.prices-services {
+    margin-bottom: 40px;
+
+    @include tablet() {
+        margin-bottom: 47px;
+    }
+}
+
+.prices-services__slider {
+    margin-bottom: 16px;
+    
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+    @include tablet() {
+        display: none;
+    }           
+}
+
+.prices-services__text-warning {
+    margin-bottom: 27px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+
+    @include tablet() {
+        width: 421px;
+    }
+}
+
+.prices-services__btn {
+    text-align: left;
+
+        img {
+            margin-left: 9px;
+            margin-top: 6px;
+        }
+}
+
+.prices-services__button-order {
+    width: 119px;
+    height: 32px;
+    padding: 4px 40px 4px 12px;
+    display: flex;
+    align-items: center;
+
+    background-color: var(--ui-pink);
+    border-radius: 16px;
+
+    background-image: url("../img/icons/dropdown.svg");
+    background-repeat: no-repeat;
+    background-position: 97px center;
+
+    color: var(--white-text);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+}

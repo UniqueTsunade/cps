@@ -1,0 +1,37 @@
+.modal-feedback-form__input_big {
+    height: 118px;
+    resize: none;
+    
+    
+
+        &::-webkit-input-placeholder {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+    
+        &::-moz-placeholder {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+    
+        &:-ms-input-placeholder {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+    
+        &::-ms-input-placeholder {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+
+        &::placeholder {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+        }
+}
+

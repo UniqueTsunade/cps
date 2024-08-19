@@ -1,0 +1,41 @@
+.sidebar {
+    display: none;
+
+    @include desktop() {
+        display: block;
+        padding: 30px 31px 30px 22px;
+
+        background-color: var(--white-background);
+    }
+
+}
+
+.sidebar__nav {
+    margin-bottom: 37px;
+    width: 253px;
+    display: flex;
+    column-gap: 118px;
+    justify-content: space-between;
+    align-items: center;
+
+    &.mobile-menu__nav {
+        margin-bottom: 46px;
+        width: 288px;
+        column-gap: 94px;
+
+        @include tablet() {
+            column-gap: 74px; 
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 16px;
+        }
+    }
+    
+}
+
+
+

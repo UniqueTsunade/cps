@@ -1,0 +1,13 @@
+.nav-desktop-list {
+    display: flex;
+    column-gap: 32px;
+}
+
+.nav-desktop-list__link {
+    display: flex;
+    align-items: center;
+    column-gap: 9px;
+
+    color: var(--text-color);
+    font-weight: 500;
+}

@@ -1,0 +1,15 @@
+.nav-mobile {
+    padding: 19px 16px;
+
+    background-color: var(--white-background);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+
+
+    @include tablet() {
+        display: none;
+    }
+}

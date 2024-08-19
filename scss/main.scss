@@ -1,0 +1,31 @@
+//base
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/base";
+
+//blocks
+@import "./blocks/header";
+@import "./blocks/header-info-block";
+@import "./blocks/mobile-menu";
+@import "./blocks/modal-window";
+@import "./blocks/modal-window-form";
+@import "./blocks/modal-order-call";
+@import "./blocks/modal-feedback";
+@import "./blocks/modal-feedback-form";
+@import "./blocks/sidebar";
+@import "./blocks/sidebar-footer";
+@import "./blocks/nav-mobile";
+@import "./blocks/nav-divider";
+@import "./blocks/nav-tablet";
+@import "./blocks/left-navigation-list";
+@import "./blocks/nav-desktop-list";
+@import "./blocks/header-list";
+@import "./blocks/section-content";
+@import "./blocks/collection";
+@import "./blocks/equipment-brands";
+@import "./blocks/btn-show-more";
+@import "./blocks/types-equipment";
+@import "./blocks/prices-services";
+@import "./blocks/prices-services-collection";
+@import "./blocks/prices-services-table";
+@import "./blocks/footer";

@@ -1,0 +1,42 @@
+.prices-services-collection {
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-auto-flow: column;
+
+    @include tablet() {
+        display: none;
+    }
+}
+
+.prices-services-collection__banner {
+    width: 260px;
+    height: 200px;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--white-background);
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &-last-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        column-gap: 28px;
+    }
+}
+
+.prices-services-collection__banner-term {
+    p {
+         display: block;
+         text-wrap: nowrap;
+    }
+}
+
+.prices-services-collection__banner-text {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+}

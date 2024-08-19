@@ -1,0 +1,41 @@
+:root {
+    --text-color: #1B1C21;
+    --white-text: #FFFFFF;
+
+    --header-list-text: #7E7E82;
+
+    --section-title: #7E7E82;
+
+    --price-table-title: #7E7E82;
+
+    --footer-text: #7E7E82;
+
+    --selected-text:#7E7E82;
+    
+    --form-text: #7E7E82;
+
+    --input-placeholder: #B5B6BC;
+
+    --ui-pink: #FF3E79;
+    --ui-biruza: #D9FFF5;
+    --ui-grey: #EAEAEA;
+    --ui-aquamarine: #41F6D7;
+
+    --white-background: #FFFFFF;
+    --smoky-background: #F8F8F8;
+
+
+    --font-main: 'TTLakes', sans-serif;
+}
+
+@mixin tablet() {
+    @media (min-width: 768px) {
+        @content
+    }
+};
+
+@mixin desktop() {
+    @media (min-width: 1440px) {
+        @content
+    }
+}

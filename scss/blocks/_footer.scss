@@ -1,0 +1,33 @@
+.footer__wrapper {
+    padding: 16px 4px 19px 4px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include tablet() {
+        padding: 32px 33px 21px 31px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        text-align: left;
+        row-gap: 0;
+        column-gap: 32px;
+        border-top: 1px solid var(--ui-biruza);
+
+        h4 {
+            flex: 1;
+                &:last-child {
+                    flex: 0 0 213px;
+                    text-align: right;
+
+                    @include desktop() {
+                        flex: 0 0 330px;
+                    }
+                }
+
+        }
+    }
+}

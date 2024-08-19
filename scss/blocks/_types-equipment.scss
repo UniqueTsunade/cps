@@ -1,0 +1,10 @@
+.types-equipment__slider {
+    img {
+        display: block;
+        margin: 0 auto 24px;
+    }
+
+    @include tablet() {
+        display: none;
+    }
+}

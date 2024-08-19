@@ -1,0 +1,28 @@
+.section-content {
+	margin-bottom: 16px;
+    padding: 16px;
+    background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+	transform: matrix(-1, 0, 0, 1, 0, 0);
+
+	@include tablet() {
+		border-top: 1px solid var(--ui-biruza);
+		padding: 16px 24px;
+		margin-bottom: 24px;
+	}
+
+	@include desktop() {
+		padding: 16px 32px;
+	}
+
+	&_big-margin {
+		@include tablet() {
+			margin-bottom: 31px;
+		}
+	}
+}
+
+.section-content__title {
+	text-transform: uppercase;
+	color: var(--section-title);
+	transform: matrix(-1, 0, 0, 1, 0, 0);
+}
