@@ -324,6 +324,7 @@ input::placeholder {
   width: 320px;
   opacity: 0;
   visibility: hidden;
+  z-index: 4;
   transition: all 0.4s ease-in-out;
 }
 @media (min-width: 1440px) {
