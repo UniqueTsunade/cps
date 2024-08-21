@@ -84,7 +84,7 @@ blurOverlay.addEventListener("click", () => {
     toggleModal(false, modalOrderCall);
 });
 
-// Закрытие по нажатию Escape
+// Closing by pressing Escape
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         toggleMobileMenu(false, sidebar);
@@ -93,13 +93,14 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-// Closing by pressing Escape
-const headerListItems = document.querySelectorAll(".header-list__item");
+
+//Menu item selection
+const headerListItems = document.querySelectorAll(".descriptive-content__item");
 
 headerListItems.forEach(listItem => listItem.addEventListener("click", function() {
-    headerListItems.forEach(item => item.classList.remove("header-list__item--picked"));
+    headerListItems.forEach(item => item.classList.remove("descriptive-content__item--picked"));
 
-    listItem.classList.add("header-list__item--picked");
+    listItem.classList.add("descriptive-content__item--picked");
 
 }))
 
