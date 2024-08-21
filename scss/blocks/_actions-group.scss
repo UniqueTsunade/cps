@@ -1,0 +1,28 @@
+.actions-group {
+    display: flex;
+    column-gap: 16px;
+    justify-content: start;
+    align-items: center;
+
+
+    &__call-btn {
+        background-image: url("../img/icons/call.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+    
+    &__feedback-btn {
+        background-image: url("../img/icons/chat.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+    
+    &__profile-btn {
+        background-image: url("../img/icons/profile.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -5,89 +5,50 @@
     grid-auto-flow: column;
     column-gap: 16px;
 
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
     @include tablet() {
         grid-auto-flow: row;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px 24px;
-        justify-items: stretch; 
         margin-bottom: 24px;
     }
+
+    @include desktop() {
+        gap: 16px 32px;
+    }
+
+
+    &__banner {
+        width: 240px;
+        height: 72px;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        background-color: var(--white-background);
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+    
+        @include tablet() {
+            width: 224px;
+        }
+    
+        @include desktop() {
+            width: 240px;
+        }
+    }
 }
 
 
-.collection__banner {
-    width: 240px;
-    height: 72px;
-    padding: 16px;
-    display: flex;
-    column-gap: 60px;
-    justify-content: space-between;
-    align-items: center;
 
-    background-color: var(--white-background);
-    border: 1px solid #EAEAEA;
-    border-radius: 6px;
 
-    &-lenovo {
-        @include tablet() {
-            column-gap: 44px;
-        }
-    }
-
-    &-samsung {
-        column-gap: 52px;
-
-        @include tablet() {
-            column-gap: 36px;
-        }
-    }
-
-    &-sonic {
-        padding-left: 14px;
-        column-gap: 42px;
-
-        @include tablet() {
-            column-gap: 25px;
-        }
-    }
-
-    &-hp {
-        padding-left: 10px;
-    }
-
-    &-sony {
-        padding-left: 14px;
-        column-gap: 42px;
-
-        @include tablet() {
-            column-gap: 25px;
-        }
-    }
-
-    &-type-equipment {
-        height: 160px;
-        flex-direction: column;
-        align-items: start;
-    }
-
-    @include tablet() {
-        width: 224px;
-    }
-}
-
-.collection__banner-btn {
-    display: block;
-    flex-shrink: 0;
-
-    &-type-equipment {
-        align-self: flex-end;
-    }
-}
-
-.collection__banner-bosch {
-    column-gap: 40px;
-
-    @include tablet() {
-        column-gap: 24px;
-    }
-}

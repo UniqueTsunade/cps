@@ -1,92 +1,122 @@
-//Mobile menu
-const openMobileMenuBtns = document.querySelectorAll(".nav__burger-menu");
-const closeMobileMenuBtn = document.querySelector(".mobile-menu__close");
-const mobileMenu = document.querySelector(".mobile-menu");
+// Common elements
+const sidebar = document.querySelector(".sidebar");
+const sidebarHeader = document.querySelector(".sidebar__header");
 const blurOverlay = document.querySelector(".blur-overlay");
+const modalWindow = document.querySelector(".modal-window");
+
+// Individual elements
+const openMobileMenuBtns = document.querySelectorAll(".nav__burger-menu");  
+const mobileMenuCloseBtn = document.querySelector(".sidebar__close-btn");  
+ 
+const feedbackBtns = document.querySelectorAll(".feedback-btn");  
+const modalFeedback = document.querySelector(".modal-window__feedback");  
+const modalCloseBtns = document.querySelectorAll(".modal-window__close-btn"); 
 
 
-function openMobileMenu() {
-    mobileMenu.classList.remove("none");
-    blurOverlay.classList.add("blur-overlay_active");
+const orderCallBtns = document.querySelectorAll(".order-call-btn");  
+const modalOrderCall = document.querySelector(".modal-window__order-call"); 
+
+// function to open/close mobile menu
+function toggleMobileMenu(isOpen) {
+    if (isOpen) {
+        sidebar.classList.add("sidebar_mobile");
+        sidebarHeader.classList.add("sidebar__header--mobile");
+        blurOverlay.classList.add("blur-overlay_active");
+    } else {
+        sidebar.classList.remove("sidebar_mobile");
+        sidebarHeader.classList.remove("sidebar__header--mobile");
+        blurOverlay.classList.remove("blur-overlay_active");
+    }
+}
+
+// function to open/close modal window
+function toggleModal(isOpen, modalType) {
+    if (isOpen) {
+        blurOverlay.classList.add("blur-overlay_active");
+        modalWindow.classList.remove("is--hidden");
+        modalType.classList.remove("is--hidden");
+    } else {
+        blurOverlay.classList.remove("blur-overlay_active");
+        modalWindow.classList.add("is--hidden");
+        modalType.classList.add("is--hidden");
+    }
 }
 
 
-function closeMobileMenu() {
-    mobileMenu.classList.add("none");
-    blurOverlay.classList.remove("blur-overlay_active");
-}
+// Open mobile menu
+openMobileMenuBtns.forEach(btn => 
+    btn.addEventListener("click", () => toggleMobileMenu(true))
+);
 
+// Close mobile menu
+mobileMenuCloseBtn.addEventListener("click", () => toggleMobileMenu(false));
 
-openMobileMenuBtns.forEach(btn => btn.addEventListener("click", openMobileMenu));
-closeMobileMenuBtn.addEventListener("click", closeMobileMenu);
+// Open feedback
+feedbackBtns.forEach(btn => 
+    btn.addEventListener("click", () => {
+        toggleMobileMenu(false);
+        toggleModal(true, modalFeedback);
+    })
+);
 
+// Close feedback
+modalCloseBtns.forEach(btn => 
+    btn.addEventListener("click", () => toggleModal(false, modalFeedback))
+);
 
-//Feedback
-const feedbackBtns = document.querySelectorAll(".feedback-btn");
-const modalFeedback = document.querySelector(".modal-feedback");
-const modalFeedbackCloseBtn = document.querySelector(".modal-feedback__close");
+// Open order call
+orderCallBtns.forEach(btn => 
+    btn.addEventListener("click", () => {
+        toggleMobileMenu(false);
+        toggleModal(true, modalOrderCall);
+    })
+);
 
+// Close order call
+modalCloseBtns.forEach(btn => 
+    btn.addEventListener("click", () => toggleModal(false, modalOrderCall))
+);
 
+// Closing on click outside the modal window
+blurOverlay.addEventListener("click", () => {
+    toggleMobileMenu(false, modalFeedback)
+    toggleModal(false, modalFeedback);
+    toggleModal(false, modalOrderCall);
+});
 
-function openmodalFeedback() {
-    modalFeedback.classList.remove("none");
-    blurOverlay.classList.add("blur-overlay_active");
-}
+// Закрытие по нажатию Escape
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        toggleMobileMenu(false, sidebar);
+        toggleModal(false, modalFeedback);
+        toggleModal(false, modalOrderCall);
+    }
+});
 
-function closemodalFeedback() {
-    modalFeedback.classList.add("none");
-    blurOverlay.classList.remove("blur-overlay_active");
-}
-
-
-feedbackBtns.forEach(btn => btn.addEventListener("click", openmodalFeedback));
-modalFeedbackCloseBtn.addEventListener("click", closemodalFeedback);
-
-
-//Order a call
-const orderCallBtns = document.querySelectorAll(".order-call-btn");
-const modalOrderCall = document.querySelector(".modal-order-call");
-const modalOrderCallCloseBtn = document.querySelector(".modal-order-call__close");
-
-
-function openModalOrderCall() {
-    modalOrderCall.classList.remove("none");
-    blurOverlay.classList.add("blur-overlay_active");
-}
-
-function closeModalOrderCall() {
-    modalOrderCall.classList.add("none");
-    blurOverlay.classList.remove("blur-overlay_active");
-}
-
-orderCallBtns.forEach(btn => btn.addEventListener("click", openModalOrderCall));
-modalOrderCallCloseBtn.addEventListener("click", closeModalOrderCall);
-
-
-
-//Service selection
+// Closing by pressing Escape
 const headerListItems = document.querySelectorAll(".header-list__item");
 
 headerListItems.forEach(listItem => listItem.addEventListener("click", function() {
-    headerListItems.forEach(item => item.classList.remove("header-list__item_picked"));
+    headerListItems.forEach(item => item.classList.remove("header-list__item--picked"));
 
-    listItem.classList.add("header-list__item_picked");
+    listItem.classList.add("header-list__item--picked");
 
 }))
 
 
 //Read more
-const headerExpansionBtn = document.querySelector(".header__expansion-btn"); 
-const headerInfoTextTablet = document.querySelector(".header-info-block__text_tablet");
-const headerInfoTextDesktop = document.querySelector(".header-info-block__text_desktop");
+const headerExpansionBtn = document.querySelector(".descriptive-content__expansion-btn"); 
+const headerInfoTextTablet = document.querySelector(".descriptive-content__text--tablet");
+const headerInfoTextDesktop = document.querySelector(".descriptive-content__text--desktop");
 
 
 headerExpansionBtn.addEventListener("click", function() {
     if (window.innerWidth < 768) {
-        headerInfoTextDesktop.classList.toggle("header-info-block__text_desktop_clicked");
+        headerExpansionBtn.classList.toggle("up");
+        headerInfoTextDesktop.classList.toggle("descriptive-content__text--desktop-clicked");
       } else if (window.innerWidth >= 768) {
-        headerInfoTextTablet.classList.toggle("none")
-        headerInfoTextDesktop.classList.toggle("header-info-block__text_desktop_clicked");
+        headerExpansionBtn.classList.toggle("up");
+        headerInfoTextTablet.classList.toggle("is--hidden");
       }
 })
 

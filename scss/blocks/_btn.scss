@@ -1,0 +1,28 @@
+.btn {
+    &_show-more {
+        display: none;
+        font-weight: 500;
+        background-image: url("../img/icons/expand.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+
+        @include tablet() {
+            display: block;
+            padding-left: 32px;
+            margin-bottom: 32px;
+        }
+
+        @include desktop() {
+            padding-left: 31px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &_open-more {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/icons/go.svg");
+        background-repeat: no-repeat;    
+    } 
+}
+

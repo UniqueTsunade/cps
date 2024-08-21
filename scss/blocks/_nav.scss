@@ -1,0 +1,121 @@
+.nav {
+    padding: 19px 16px;
+    background-color: var(--white-background);
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    @include tablet() {
+        padding: 19px 24px;
+    }
+
+    @include desktop() {
+        display: none;
+    }
+    
+    &__left-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 16px;
+
+        @include tablet() {
+            column-gap: 20px;
+        }
+
+        &--divider {
+            display: none;
+
+            @include tablet () {
+                display: block;
+                width: 2px; 
+                height: 32px;
+                border-radius: 1px;
+                background-color: var(--ui-grey);
+            }
+
+            @include desktop() {
+                display: none;
+            }
+
+        }
+    }
+
+    &_divider {
+        width: 2px; 
+        height: 32px;
+        border-radius: 1px;
+        background-color: var(--ui-grey);
+
+        @include tablet() {
+            display: none;
+        }
+    }
+   
+    &__right-section {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
+
+        &--divider {
+            display: none;
+
+            @include tablet() {
+                display: block;
+                width: 2px; 
+                height: 32px;
+                border-radius: 1px;
+                background-color: var(--ui-grey);
+            }
+
+            @include desktop() {
+                display: none;
+            }
+
+        }
+
+    }
+
+    &__actions-group{
+        display: none; 
+
+        @include tablet() {
+            display: flex;
+        }
+
+        &--last {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 16px;
+        }
+    }
+
+    &__burger-menu {
+        background-image: url("../img/icons/burger.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+
+    &__repair-btn {
+        background-image: url("../img/icons/repair.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+    
+    &__checkstatus-btn {
+        background-image: url("../img/icons/checkstatus.svg");
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+

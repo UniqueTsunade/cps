@@ -1,0 +1,101 @@
+.main-menu {
+    &__list {
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        
+        @include tablet() {
+            row-gap: 32px;
+            margin-bottom: 268px;
+        }
+    
+        @include desktop() {
+            margin-bottom: 241px;
+            row-gap: 28px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        color: var(--text-color);
+        font-weight: 500;
+    
+        &:hover {
+            &::before {
+                content: url("../img/icons/highlight-mobile-menu.svg");
+                position: absolute;
+                top: 0;
+                left: -15px;
+            }
+        }
+    
+        @include tablet() {
+            &:hover {
+                &::before {
+                    left: -23px;
+                }
+            }
+        }
+    
+        @include desktop() {
+            &:hover {
+                color: var(--selected-text);
+        
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: -21.5px;
+                    width: 4px;
+                    height: 28px;
+                    border-radius: 2px;
+                    transform: matrix(-1, 0, 0, 1, 0, 0);
+                    background: var(--ui-aquamarine);
+                }
+            }
+        }
+    
+        &--active {
+    
+            &::before {
+                content: url("../img/icons/highlight-mobile-menu.svg");
+                position: absolute;
+                top: 0;
+                left: -15px;
+            }
+    
+    
+            @include tablet() {
+                &:hover {
+                    &::before {
+                        left: -23px;
+                    }
+                }
+            }
+    
+    
+            @include desktop() {
+                color: var(--selected-text);
+    
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: -21.6px;
+                    width: 4px;
+                    height: 28px;
+        
+                    border-radius: 2px;
+                    transform: matrix(-1, 0, 0, 1, 0, 0);
+                    background: var(--ui-aquamarine);
+                }
+            }
+    
+        }
+    }
+
+    &__link:hover {
+        color: var(--selected-text);
+    }
+}
