@@ -137,6 +137,8 @@ html, body {
   letter-spacing: -0.2px;
   color: var(--text-color);
   background-color: var(--smoky-background);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 html a, body a {
   color: var(--text-color);
@@ -997,6 +999,8 @@ input::placeholder {
 }
 
 .collection {
+  max-width: -moz-max-content;
+  max-width: max-content;
   margin-bottom: 16px;
   display: grid;
   grid-template-columns: 1fr;
